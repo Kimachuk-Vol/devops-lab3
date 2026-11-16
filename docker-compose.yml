@@ -1,0 +1,9 @@
+services:
+  floci:
+    image: floci/floci:latest
+    container_name: floci
+    ports:
+      - "4566:4566"
+    volumes:
+      # потрібно, щоб floci запускав Lambda в окремих Docker-контейнерах
+      - /var/run/docker.sock:/var/run/docker.sock
